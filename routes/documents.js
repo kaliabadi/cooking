@@ -10,6 +10,21 @@ router.get('/documentlist', function(req, res) {
     });
 });
 
+router.get('/documentlist/:query', function(req, res) {
+    var db = req.db;
+    var collection = db.get('test');
+    var query = req.params.query;
+    collection.find({},{},function(e,docs){
+        var recipes = [];
+        docs.forEach(function(recipe) {
+            if (recipe.ingredients = query) {
+                recipes.push(recipe);
+            }
+        });
+        res.json(recipes);
+    });
+});
+
 router.post('/adddocument', function(req, res) {
     var db = req.db;
     var collection = db.get('test');

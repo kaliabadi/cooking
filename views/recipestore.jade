@@ -1,0 +1,60 @@
+extends layout
+
+block content
+    // BANNER
+    #cookbookBanner
+        h1= title
+        img(src='../images/background.png')
+
+    //BANNER
+
+    // Wrapper
+    #wrapper
+
+        // RECIPE DETAILS
+        #recipeDetails
+            h2 Recipe Details
+            p
+                #container-recipeDetails
+                    strong RecipeName:
+                    |  <span id='recipeInfoName'></span>
+                    br
+                #container-recipeDetails
+                    strong CookingTime:
+                    |  <span id='recipeInfoCookingTime'></span>
+                    br
+                #container-recipeDetails
+                    strong Ingredients:
+                    |  <span id='recipeInfoIngredients'></span>
+                    br
+                #container-recipeDetails
+                    strong Something:
+                    |  <span id='recipeInfoSomething'></span>
+        // /RECIPE DETAILS
+
+        // DOCUMENT LIST
+        h2 Recipe List
+        #documentList
+            table
+                thead
+                    th RecipeName
+                    th CookingTime
+                    th Delete?
+                tbody
+        // /DOCUMENTLIST
+    
+        // ADD RECIPE
+        h2 Add recipe
+        #addRecipe
+            fieldset
+                input#inputRecipeName(type='text', placeholder='Recipe name')
+                br
+                input#inputCookingTime(type='number', placeholder='Cooking time')
+                br
+                input#inputIngredients(type='text', placeholder='Ingredients')
+                br
+                input#inputSomeOtherShit(type='text', placeholder='something')
+                br
+                button#btnAddRecipe Add Recipe
+        // /ADD RECIPE§
+    // WRAPPER

@@ -54,9 +54,9 @@ function showRecipeDetails(event) {
     var thisRecipeName = $(this).attr('rel');
 
     // Get Index of object based on id value
-    var arrayPosition = documentListData.map(function(arrayItem) { return arrayItem.recipeName; }).indexOf(thisRecipeName);
-
-    console.log(documentListData);  
+    var arrayPosition = documentListData.map(function(arrayItem) { 
+        return arrayItem.recipeName;
+    }).indexOf(thisRecipeName);
 
     // Get our User Object
     var thisRecipeObject = documentListData[arrayPosition];
@@ -73,16 +73,22 @@ function searchHttp(event) {
 
     var query = $('#inputSearchQuery').val();
 
-    var queryUrl = '/documents/recipesearch/' + query;
-
-    console.log('something!');
-    $.getJSON( queryUrl, function( data ) {
-        $.each(data.parsed, function() {
-            console.log(this);
-            tableContent += '<td><a href="#" class="linkshowrecipedetails" rel="' + this.title + '">' + this.title + '</a></td>';
-            tableContent += '<td><img src="' + this.image_url + '"></img></td>';
+    $.getJSON( '/documents/documentlist/' + query, function( data ) {
+        $.each(data, function() {
+            tableContent += '<tr>';
+            tableContent += '<td><a href="' + this.recipeName + '" class="linkshowrecipedetails" rel="something">' + this.recipeName + '</a></td>';
+            tableContent += '</tr>';
         });
 
+        $('#searchList table tbody').html(tableContent);
+    });
+    
+    $.getJSON( '/documents/recipesearch/' + query, function( data ) {
+        $.each(data.parsed, function() {
+            tableContent += '<tr>';
+            tableContent += '<td><a href="' + this.source_url + '" class="linkshowrecipedetailss" rel="' + this.title + '">' + this.title + '</a><img src="' + this.image_url + '"></img></td>';
+            tableContent += '</tr>';
+        });
         $('#searchList table tbody').html(tableContent);
     });
 };
@@ -140,9 +146,7 @@ function addRecipe(event) {
     }
 };
 
-// Delete User
 function deleteRecipe(event) {
-
     event.preventDefault();
 
     // Pop up a confirmation dialog

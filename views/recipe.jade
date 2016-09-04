@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    // BANNER
+    #cookbookBanner
+        h1= title
+        img(src='../images/background.png')
+
+    //BANNER
+
+    // Wrapper
+    #wrapper
+
+        // RECIPE DETAILS
+        #recipeDetails
+            h2 Recipe Details
+            
+            #container-recipeDetails
+                strong RecipeName:
+                |  <span id='recipeInfoName'></span>
+                br
+            #container-recipeDetails
+                strong CookingTime:
+                |  <span id='recipeInfoCookingTime'></span>
+                br
+            #container-recipeDetails
+                strong Ingredients:
+                |  <span id='recipeInfoIngredients'></span>
+                br
+            #container-recipeDetails
+                strong Something:
+                |  <span id='recipeInfoSomething'></span>
+        // /RECIPE DETAILS
+    // WRAPPER

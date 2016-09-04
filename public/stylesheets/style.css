@@ -69,14 +69,16 @@ a {
 			}
 
 #recipeDetails {
-	width: 30rem;
-	position: relative;
-	top:0; left:0;
+	margin: 2rem;
 }
 	#recipeDetails p {
 		padding:15px;
 		border:1px solid #CCC;
 		background:rgba(80,120,255,0.05);
+	}
+
+	#container-recipeDetails {
+		padding 1rem;
 	}
 
 fieldset {
