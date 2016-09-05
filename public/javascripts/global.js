@@ -66,6 +66,9 @@ function showRecipeDetails(event) {
     $('#recipeInfoCookingTime').text(thisRecipeObject.cookingTime);
     $('#recipeInfoIngredients').text(thisRecipeObject.ingredients);
     $('#recipeInfoSomething').text(thisRecipeObject.something);
+
+    $('#recipeDetails').removeClass('hidden');
+    $('#recipeDetails').addClass('active');
 };
 
 function searchHttp(event) {

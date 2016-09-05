@@ -14,4 +14,8 @@ router.get('/recipe/:query', function(req, res, next) {
 	res.render('recipe', { title: 'Recipe'});
 });
 
+router.get('/contact', function(req, res, next) {
+	res.render('contact', {title: 'Contact us'});
+});
+
 module.exports = router;
