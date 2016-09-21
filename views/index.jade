@@ -2,10 +2,9 @@ extends layout
 
 block content
 
-    // BANNER
-    #cookbookBanner
-        h1= title
-        img(src='../images/background.png')
+    //MAIN
+    #mainContainer
+        img(src='../images/newbackground.png')
 
     //BANNER
 
@@ -18,7 +17,7 @@ block content
                 input#inputSearchQuery(type='text', placeholder='What ingredient do you have?')
                 button#btnSearch Search
         
-        #searchList
+        .searchList
             table
                 thead
                     th searchTitle

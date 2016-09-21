@@ -1,15 +1,33 @@
 extends layout
 
 block content
+    
+    //MAIN
+    #mainContainer
+        img(src='../images/newbackground.png')
+
+
     // BANNER
     #cookbookBanner
         h1= title
-        img(src='../images/background.png')
-
-    //BANNER
 
     // Wrapper
     #wrapper
+
+        // ADD RECIPE
+        h2 Add recipe
+        #addRecipe
+            fieldset
+                input#inputRecipeName(type='text', placeholder='Recipe name')
+                br
+                input#inputCookingTime(type='number', placeholder='Cooking time')
+                br
+                input#inputIngredients(type='text', placeholder='Ingredients')
+                br
+                input#inputSomeOtherShit(type='text', placeholder='something')
+                br
+                button#btnAddRecipe Add Recipe
+        // /ADD RECIPE§
 
         // RECIPE DETAILS
         #recipeDetails.hidden
@@ -43,18 +61,4 @@ block content
                 tbody
         // /DOCUMENTLIST
     
-        // ADD RECIPE
-        h2 Add recipe
-        #addRecipe
-            fieldset
-                input#inputRecipeName(type='text', placeholder='Recipe name')
-                br
-                input#inputCookingTime(type='number', placeholder='Cooking time')
-                br
-                input#inputIngredients(type='text', placeholder='Ingredients')
-                br
-                input#inputSomeOtherShit(type='text', placeholder='something')
-                br
-                button#btnAddRecipe Add Recipe
-        // /ADD RECIPE§
     // WRAPPER
