@@ -29,6 +29,17 @@ block content
                 button#btnAddRecipe Add Recipe
         // /ADD RECIPE§
 
+        // DOCUMENT LIST
+        h2 Recipe List
+        #documentList
+            table
+                thead
+                    th RecipeName
+                    th CookingTime
+                    th Delete?
+                tbody
+        // /DOCUMENTLIST
+
         // RECIPE DETAILS
         #recipeDetails.hidden
             h2 Recipe Details
@@ -49,16 +60,5 @@ block content
                     strong Something:
                     |  <span id='recipeInfoSomething'></span>
         // /RECIPE DETAILS
-
-        // DOCUMENT LIST
-        h2 Recipe List
-        #documentList
-            table
-                thead
-                    th RecipeName
-                    th CookingTime
-                    th Delete?
-                tbody
-        // /DOCUMENTLIST
     
     // WRAPPER

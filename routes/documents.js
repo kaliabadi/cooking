@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var http = require('http');
+var config = require('../config');
 
 router.get('/documentlist', function(req, res) {
     var db = req.db;
-    var collection = db.get('test');
+    var collection = db.get(config.dataBase);
     collection.find({},{},function(e,docs){
         res.json(docs);
     });
@@ -12,7 +13,7 @@ router.get('/documentlist', function(req, res) {
 
 router.get('/documentlist/:query', function(req, res) {
     var db = req.db;
-    var collection = db.get('test');
+    var collection = db.get(config.dataBase);
     var query = req.params.query;
     collection.find({},{},function(e,docs){
         var recipes = [];
@@ -27,7 +28,7 @@ router.get('/documentlist/:query', function(req, res) {
 
 router.post('/adddocument', function(req, res) {
     var db = req.db;
-    var collection = db.get('test');
+    var collection = db.get(config.dataBase);
     collection.insert(req.body, function(err, result){
         res.send(
             (err === null) ? { msg: '' } : { msg: err }
@@ -37,7 +38,7 @@ router.post('/adddocument', function(req, res) {
 
 router.delete('/deletedocument/:id', function(req, res) {
     var db = req.db;
-    var collection = db.get('test1¡');
+    var collection = db.get(config.dataBase);
     var documentToDelete = req.params.id;
     collection.remove({ '_id' : documentToDelete }, function(err) {
         res.send((err === null) ? { msg: '' } : { msg:'error: ' + err });
