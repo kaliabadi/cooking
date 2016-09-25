@@ -12,15 +12,24 @@ router.get('/recipestore', function(req, res, next) {
 });
 
 router.get('/recipe/:query', function(req, res, next) {
-	
+	var query = req.params.query;
+	var dbSearchterm = query.replace(/\_/g," ")
+
+	console.log(dbSearchterm);
+
 	var getRecipeData = function (db, res, next) {
 	    db.get(config.dataBase).find({},{},function(e,docs){
-	        next(docs);
+	    	var recipes = [];
+	    	docs.forEach(function(recipe) {
+	            if (recipe.recipeName = dbSearchterm) {
+	                recipes.push(recipe);
+	            }
+        	});
+        	next(recipes);
 	    });
 	};
 
 	getRecipeData(req.db, res, function(docs) {
-		console.log(docs[0].recipeName);
 		res.render('recipe', {
 			title: 'Recipe',
 			recipeName: docs[0].recipeName,

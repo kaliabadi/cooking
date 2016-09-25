@@ -20,11 +20,11 @@ block content
             fieldset
                 input#inputRecipeName(type='text', placeholder='Recipe name')
                 br
-                input#inputCookingTime(type='number', placeholder='Cooking time')
+                input#inputCookingTime(type='text', placeholder='Cooking time')
                 br
                 input#inputIngredients(type='text', placeholder='Ingredients')
                 br
-                input#inputSomeOtherShit(type='text', placeholder='something')
+                input#inputMethod(type='text', placeholder='Method')
                 br
                 button#btnAddRecipe Add Recipe
         // /ADD RECIPE§
@@ -43,7 +43,7 @@ block content
         // RECIPE DETAILS
         #recipeDetails.hidden
             h2 Recipe Details
-            div
+            div#main-recipeDetails
                 #container-recipeDetails
                     strong RecipeName:
                     |  <span id='recipeInfoName'></span>
@@ -58,7 +58,7 @@ block content
                     br
                 #container-recipeDetails
                     strong Something:
-                    |  <span id='recipeInfoSomething'></span>
+                    |  <span id='recipeMethod'></span>
         // /RECIPE DETAILS
     
     // WRAPPER

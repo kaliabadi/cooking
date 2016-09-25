@@ -1,7 +1,7 @@
 function populateTable () {
     var tableContent = '';
 
-    $.getJSON( '/documents/documentlist', function( data ) {
+    $.getJSON( '/documents/documentlist/', function( data ) {
         documentListData = data;
 
         $.each(data, function(){

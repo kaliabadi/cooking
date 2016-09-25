@@ -18,7 +18,8 @@ router.get('/documentlist/:query', function(req, res) {
     collection.find({},{},function(e,docs){
         var recipes = [];
         docs.forEach(function(recipe) {
-            if (recipe.ingredients = query) {
+            console.log(query);
+            if ((recipe.ingredients).includes(query)) {
                 recipes.push(recipe);
             }
         });

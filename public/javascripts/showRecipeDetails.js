@@ -13,7 +13,7 @@ function showRecipeDetails(event) {
     $('#recipeInfoName').text(thisRecipeObject.recipeName);
     $('#recipeInfoCookingTime').text(thisRecipeObject.cookingTime);
     $('#recipeInfoIngredients').text(thisRecipeObject.ingredients);
-    $('#recipeInfoSomething').text(thisRecipeObject.something);
+    $('#recipeMethod').text(thisRecipeObject.method);
 
     $('#recipeDetails').removeClass('hidden');
     $('#recipeDetails').addClass('active');

@@ -39,13 +39,15 @@ a {
 }
 
 #documentList {
-	margin:0 0 30px 0;
+	margin:1rem 15rem;
 }
 	#documentList table {
 		border-collapse:separate;
 		border-spacing:1px;
 		background:#CCC;
+		width: 100%;
 	}
+
 		#documentList table th {
 			background:#EEE;
 			font-weight:600;
@@ -122,25 +124,27 @@ a {
 			margin: 4rem;
 		}
 
-#recipeDetails {
-	margin: 2rem;
+.hidden {
+	display: none;
 }
-	.hidden {
-		display: none;
-	}
-	.active {
-		display: block;
-	}
+.active {
+	display: block;
+}
 
-	#recipeDetails p {
-		padding:15px;
-		border:1px solid #CCC;
-		background:rgba(80,120,255,0.05);
-	}
-
+#recipeDetails p {
+	padding:15px;
+	border:1px solid #CCC;
+	background:rgba(80,120,255,0.05);
+}
 	#container-recipeDetails {
-		padding 1rem;
+		border: black;
 	}
+
+#main-recipeDetails {
+	background-color: #EEE;
+	margin: 1rem 15rem;
+	padding 1rem;
+}
 
 fieldset {
 	border:0;
@@ -165,6 +169,7 @@ fieldset {
 
 #cookbookBanner {
 		width: 100%;
+		background-color: #D3D3D3;
 }
 	#cookbookBanner h1 {
 		text-align: center;

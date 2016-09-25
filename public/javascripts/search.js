@@ -1,18 +1,19 @@
 function search(event) {
     var query = $('#inputSearchQuery').val();
 
-    populateSearchResults('/documents/documentlist/', query);
-    // populateSearchResults('documents/recipesearch/', query);
+    populateSearchResults('/documents/documentlist/' + query);
+    // populateSearchResults('documents/recipesearch/' + query);
 };
 
-function populateSearchResults (endpoint, query) {
+function populateSearchResults (query) {
     var tableContent;
 
-    $.getJSON(endpoint + query, function(data) {
+    $.getJSON(query, function(data) {
         $.each(formatCheck(data), function() {
             tableContent += '<tr>';
             if (this.recipeName) {
-                tableContent += '<td><a href="/recipe/' + this.recipeName + 
+                var href = this.recipeName.replace(/ /g,"_");
+                tableContent += '<td><a href="/recipe/' + href + 
                 '" class="linkshowrecipedetails" rel="something">' + this.recipeName + '</a></td>';  
             } else {
                 tableContent += '<td><a href="' + this.source_url + 

@@ -12,7 +12,7 @@ function addRecipe(event) {
             'recipeName': $('#addRecipe fieldset input#inputRecipeName').val(),
             'cookingTime': $('#addRecipe fieldset input#inputCookingTime').val(),
             'ingredients': $('#addRecipe fieldset input#inputIngredients').val(),
-            'something': $('#addRecipe fieldset input#inputSomeOtherShit').val(),
+            'method': $('#addRecipe fieldset input#inputMethod').val(),
         }
 
         $.ajax({
