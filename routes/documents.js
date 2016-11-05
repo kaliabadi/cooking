@@ -19,7 +19,7 @@ router.get('/documentlist/:query', function(req, res) {
         var recipes = [];
         docs.forEach(function(recipe) {
             console.log(query);
-            if ((recipe.ingredients).includes(query)) {
+            if ((recipe.ingredients.toUpperCase()).includes(query.toUpperCase())) {
                 recipes.push(recipe);
             }
         });
@@ -55,7 +55,6 @@ router.get('/recipesearch/:query', function(req, res, next){
         };
 
         return http.get(options, function(res) {
-            console.log('got response' + res.statusCode);
             var body = '';
 
             res.on('data', function(chunk) {

@@ -4,7 +4,6 @@ block content
     
         //MAIN
         #mainContainer
-            img(src='../images/newbackground.png')
 
         //BANNER
 
@@ -12,23 +11,24 @@ block content
         #wrapper
 
             // RECIPE DETAILS
-            #recipeDetails
-                h2 Recipe Details
+            .panel.panel-default#recipeDetails
+                h2.panel-heading Recipe Details
                 
-                #container-recipeDetails
-                    strong RecipeName:
-                    |  <span id='recipeInfoName'>#{recipeName}</span>
-                    br
-                #container-recipeDetails
-                    strong CookingTime:
-                    |  <span id='recipeInfoCookingTime'>#{cookingTime}</span>
-                    br
-                #container-recipeDetails
-                    strong Ingredients:
-                    |  <span id='recipeInfoIngredients'>#{ingredients}</span>
-                    br
-                #container-recipeDetails
-                    strong Something:
-                    |  <span id='recipeInfoSomething'>#{something}</span>
+                div.panel-body
+                    #container-recipeDetails
+                        strong RecipeName:
+                        |  <span id='recipeInfoName'>#{recipeName}</span>
+                        br
+                    #container-recipeDetails
+                        strong CookingTime:
+                        |  <span id='recipeInfoCookingTime'>#{cookingTime}</span>
+                        br
+                    #container-recipeDetails
+                        strong Ingredients:
+                        |  <span id='recipeInfoIngredients'>#{ingredients}</span>
+                        br
+                    #container-recipeDetails
+                        strong Instructions:
+                        |  <span id='recipeInfoInstructions'>#{instructions}</span>
             // /RECIPE DETAILS
         // WRAPPER

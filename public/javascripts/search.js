@@ -2,7 +2,7 @@ function search(event) {
     var query = $('#inputSearchQuery').val();
 
     populateSearchResults('/documents/documentlist/' + query);
-    // populateSearchResults('documents/recipesearch/' + query);
+    populateSearchResults('/documents/recipesearch/' + query);
 };
 
 function populateSearchResults (query) {
@@ -14,11 +14,11 @@ function populateSearchResults (query) {
             if (this.recipeName) {
                 var href = this.recipeName.replace(/ /g,"_");
                 tableContent += '<td><a href="/recipe/' + href + 
-                '" class="linkshowrecipedetails" rel="something">' + this.recipeName + '</a></td>';  
+                '" class="linkshowrecipedetails list-group-item" rel="something">' + this.recipeName + '</a></td>';  
             } else {
                 tableContent += '<td><a href="' + this.source_url + 
-                '" class="linkshowrecipedetailss" rel="' + this.title + '">' +
-                 this.title + '</a><img src="' + this.image_url + '"></img></td>';
+                '" class="linkshowrecipedetails list-group-item" rel="' + this.title + '">' +
+                 this.title + '</a></td>';
             }
             tableContent += '</tr>';
         });

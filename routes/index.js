@@ -15,8 +15,6 @@ router.get('/recipe/:query', function(req, res, next) {
 	var query = req.params.query;
 	var dbSearchterm = query.replace(/\_/g," ")
 
-	console.log(dbSearchterm);
-
 	var getRecipeData = function (db, res, next) {
 	    db.get(config.dataBase).find({},{},function(e,docs){
 	    	var recipes = [];

@@ -3,26 +3,19 @@ body {
   background-color: #F0F0F0;
   margin: 0;
   font-family: sans-serif;
-}
-
-h2 {
-	width: 100%
-	text-align: center;
+  background-image: url(../images/newbackground.png);
 }
 
 a {
   color: #00B7FF;
 }
 
-#wrapper {
-	position:relative;
+fieldset {
+	margin: 0 auto;
 }
 
-#wrapper h2 {
-	text-align: center;
-	background-color: #d3d3d3;
-	font-color: white;
-	margin: 5rem 15rem;
+#wrapper {
+	position:relative;
 }
 
 #mainContainer {
@@ -38,58 +31,27 @@ a {
 	margin-bottom: -20px;
 }
 
-#documentList {
-	margin:1rem 15rem;
-}
-	#documentList table {
-		border-collapse:separate;
-		border-spacing:1px;
-		background:#CCC;
-		width: 100%;
-	}
-
-		#documentList table th {
-			background:#EEE;
-			font-weight:600;
-			padding:10px 20px;
-			text-align:center;
-		}
-		#documentList table tbody {
-			padding:0; margin:0;
-			border-collapse:collapse;
-			border-spacing:0px;
-		}
-			#documentList table td {
-				background:#FFF;
-				padding:5px 10px;
-				text-align:center;
-			}
 #searchButton {
 	font-size: 32px;
 	padding: 22rem 5rem;
+	margin: 0 auto;
 }
 	#inputSearchQuery {
 		font-size: 32px;
-		text-align: center;
 		width: 80%;
-	}
-
-	#btnSearch {
-
 	}
 
 .searchList.shown {
 	position: 0;
 	display: inherit;
-	margin:0 0 30px 0;
 }
 
 .searchList {
 	display: none;
-	background-color: #d3d3d3;
+	/*background-color: #d3d3d3;*/
 }
 
-	.searchList img {
+/*	.searchList img {
 		max-width: 150px;
 		max-height: 150px;
 	}
@@ -122,65 +84,54 @@ a {
 		}
 		.searchList table tr {
 			margin: 4rem;
-		}
+		}*/
 
 .hidden {
 	display: none;
 }
+
 .active {
 	display: block;
 }
 
-#recipeDetails p {
-	padding:15px;
-	border:1px solid #CCC;
-	background:rgba(80,120,255,0.05);
+#bookBanner {
+	width: 80%;
+	margin: 10rem;
 }
-	#container-recipeDetails {
-		border: black;
+
+.panel{
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 2.5rem;
+	margin-bottom: 2.5rem;
+}
+
+	.panel-heading {
+		margin-top: 0px !important;
 	}
 
-#main-recipeDetails {
-	background-color: #EEE;
-	margin: 1rem 15rem;
-	padding 1rem;
+.addrecipe.Container {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    border-width: .2rem;
 }
 
-fieldset {
-	border:0;
-	padding:0 4rem;
-}
-	fieldset input {
-	font-size: 1.5rem;
-	width: 30%;
-	}
-
-#addRecipe {
-	text-align: center;
+.input-group {
+	width: 100%;
+	padding: 1rem;
 }
 
-#addRecipe fieldset {
-	margin: 0 11rem;
-}
-
-#addRecipe input {
+.list-group {
 	width: 100%;
 }
 
-#cookbookBanner {
-		width: 100%;
-		background-color: #D3D3D3;
+.recipeResults {
+	width: 70%;
+	margin: 0 auto;
 }
-	#cookbookBanner h1 {
-		text-align: center;
-		position: relative;
-		width: 100%;
-		font-size: 4rem;
-		font-family: sans-serif;
-		color: #FFFFFF;
-	}
 
-	#cookbookBanner img {
-		width: 100%;
-	}
+#btnAddRecipe {
+	margin-top: 2rem;
 }

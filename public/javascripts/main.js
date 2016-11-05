@@ -6,6 +6,6 @@ $(document).ready(function() {
     $('#documentList table tbody').on('click', 'td a.linkshowrecipedetails', showRecipeDetails);
     $('#btnAddRecipe').on('click', addRecipe);
     $('#documentList table tbody').on('click', 'td a.linkdeleterecipe', deleteRecipe);
-    $('#btnSearch').on('click', addShownClass);
-    $('#btnSearch').on('click', search);
+    $('.search').on('click', addShownClass);
+    $('.search').on('click', search);
 });

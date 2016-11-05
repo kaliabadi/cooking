@@ -4,7 +4,6 @@ block content
 
     //MAIN
     #mainContainer
-        img(src='../images/newbackground.png')
 
     //BANNER
 
@@ -15,12 +14,12 @@ block content
         #searchButton
             fieldset
                 input#inputSearchQuery(type='text', placeholder='What ingredient do you have?')
-                button#btnSearch Search
+                button.btn.btn-lg.btn-primary.search(href="#results") search 
         
-        .searchList
-            table
+        .searchList.list-group
+            table.recipeResults#results
                 thead
-                    th searchTitle
+                    th.list-group-item.active Recipe
                 tbody
         //SEARCH
         
