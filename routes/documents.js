@@ -14,16 +14,21 @@ router.get('/documentlist', function(req, res) {
 router.get('/documentlist/:query', function(req, res) {
     var db = req.db;
     var collection = db.get(config.dataBase);
-    var query = req.params.query;
-    collection.find({},{},function(e,docs){
-        var recipes = [];
+    var queryList = decodeURI(req.params.query).split(",");
+
+    collection.find({},{},function(e, docs){
+        var recipeList = [];
         docs.forEach(function(recipe) {
-            console.log(query);
-            if ((recipe.ingredients.toUpperCase()).includes(query.toUpperCase())) {
-                recipes.push(recipe);
-            }
+
+            queryList.forEach(function(query) {
+
+                if (recipe.ingredients.toUpperCase().includes(query.toUpperCase())) {
+                    recipeList.push(recipe);
+                }
+            });
         });
-        res.json(recipes);
+
+        res.json(recipeList);
     });
 });
 
