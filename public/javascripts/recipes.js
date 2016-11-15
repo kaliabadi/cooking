@@ -9,10 +9,10 @@ function addRecipe(event) {
     if(errorCount === 0) {
 
         var newUser = {
-            'recipeName': $('#addRecipe fieldset input#inputRecipeName').val(),
-            'cookingTime': $('#addRecipe fieldset input#inputCookingTime').val(),
-            'ingredients': $('#addRecipe fieldset input#inputIngredients').val(),
-            'method': $('#addRecipe fieldset input#inputMethod').val(),
+            'recipeName': $('#inputRecipeName').val(),
+            'cookingTime': $('#inputCookingTime').val(),
+            'ingredients': $('#inputIngredients').val(),
+            'method': $('#inputMethod').val(),
         }
 
         $.ajax({
