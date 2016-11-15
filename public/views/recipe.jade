@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    
+        //MAIN
+        #mainContainer
+
+        //BANNER
+
+        // Wrapper
+        #wrapper
+
+            // RECIPE DETAILS
+            .panel.panel-default#recipeDetails
+                h2.panel-heading Recipe Details
+                
+                div.panel-body
+                    #container-recipeDetails
+                        strong RecipeName:
+                        |  <span id='recipeInfoName'>#{recipeName}</span>
+                        br
+                    #container-recipeDetails
+                        strong CookingTime:
+                        |  <span id='recipeInfoCookingTime'>#{cookingTime}</span>
+                        br
+                    #container-recipeDetails
+                        strong Ingredients:
+                        |  <span id='recipeInfoIngredients'>#{ingredients}</span>
+                        br
+                    #container-recipeDetails
+                        strong Instructions:
+                        |  <span id='recipeInfoInstructions'>#{instructions}</span>
+            // /RECIPE DETAILS
+        // WRAPPER

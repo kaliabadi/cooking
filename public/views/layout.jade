@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title=  title
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+
+    include navbar
+    .container
+
+    block content        
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='/javascripts/main.js')
+    script(src='/javascripts/populateTable.js')
+    script(src='/javascripts/recipes.js')
+    script(src='/javascripts/search.js')
+    script(src='/javascripts/showRecipeDetails.js')

@@ -1,0 +1,70 @@
+extends layout
+
+block content
+    
+    //MAIN
+    #mainContainer
+
+
+    // BANNER
+    .jumbotron#cookbookBanner
+        div.container
+            h1= title
+            p Welcome to the your recipe store! This is a place to keep all of your reciped to be included in your search results later.
+            p You can add new recipes and also look at your existing ones.
+            br
+            a.btn.btn-primary.btn-lg(href="/") Back to search
+
+    // Wrapper
+    #wrapper
+
+        // ADD RECIPE
+        div.panel.panel-default
+            h2.panel-heading Add recipe
+            .input-group.panelbody
+                fieldset
+                    input.form-control.input#inputRecipeName(type='text', placeholder='Recipe name')
+                    br
+                    input.form-control.input#inputCookingTime(type='text', placeholder='Cooking time')
+                    br
+                    input.form-control.input#inputIngredients(type='text', placeholder='Ingredients')
+                    br
+                    input.form-control.input#inputMethod(type='text', placeholder='Method')
+                    br
+                    button.btn.btn-primary#btnAddRecipe Add Recipe
+        // /ADD RECIPE
+
+        // RECIPE LIST
+        div.panel.panel-default
+            h2.panel-heading Recipe List
+            .panel-body#documentList
+                table.list-group
+                    thead
+                        th RecipeName
+                        th CookingTime
+                        th Delete?
+                    tbody
+        // /RECIPE List
+
+        // RECIPE DETAILS
+        div#recipeDetails.panel.panel-default.hidden
+            h2.panel-heading Recipe Details
+            div.panel-body#main-recipeDetails
+                #container-recipeDetails
+                    strong RecipeName:
+                    |  <span id='recipeInfoName'></span>
+                    br
+                #container-recipeDetails
+                    strong CookingTime:
+                    |  <span id='recipeInfoCookingTime'></span>
+                    br
+                #container-recipeDetails
+                    strong Ingredients:
+                    |  <span id='recipeInfoIngredients'></span>
+                    br
+                #container-recipeDetails
+                    strong Instructions:
+                    |  <span id='recipeMethod'></span>
+        // /RECIPE DETAILS
+    
+    // WRAPPER

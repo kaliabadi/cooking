@@ -9,8 +9,8 @@ var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/sg');
 
-var routes = require('./routes/index');
-var documents = require('./routes/documents');
+var routes = require('./lib/routes/index');
+var documents = require('./lib/routes/documents');
 
 var app = express();
 
@@ -20,7 +20,7 @@ app.use(function(req, res, next){
 });
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'public/views'));
 app.set('view engine', 'jade');
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));

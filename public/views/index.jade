@@ -1,0 +1,27 @@
+extends layout
+
+block content
+
+    //MAIN
+    #mainContainer
+
+    //BANNER
+
+    // Wrapper
+    #wrapper
+
+        //SEARCH
+        #searchButton
+            fieldset
+                input#inputSearchQuery(type='text', placeholder='What ingredient do you have?')
+                button.btn.btn-lg.btn-primary.search(href="#results") search 
+        
+        .searchList.list-group
+            table.recipeResults#results
+                thead
+                    th.list-group-item.active Recipe
+                tbody
+        //SEARCH
+        
+
+    // WRAPPER
