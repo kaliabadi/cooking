@@ -8,4 +8,6 @@ $(document).ready(function() {
     $('#documentList table tbody').on('click', 'td a.linkdeleterecipe', deleteRecipe);
     $('.search').on('click', addShownClass);
     $('.search').on('click', search);
+    $('#btnRegister').on('click', registerUser);
+    $('#btnLogin').on('click', login);
 });

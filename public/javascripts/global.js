@@ -152,3 +152,37 @@ function deleteRecipe(event) {
     }
 
 };
+
+function registerUser(event) {
+    event.preventDefault();
+
+    var errorCount = 0;
+    $('#userDetails input').each(function(index, val) {
+        if($(this).val() === '') { errorCount++; }
+    });
+
+    console.log('outside error check');
+
+    if(errorCount === 0) {
+
+        var userDetails = {
+            'username': $('#inputUsername').val(),
+            'firstname': $('#inputFirstname').val(),
+            'lastname': $('#inputLastname').val(),
+            'password': $('#inputPassword').val()
+        };
+
+        console.log('inside error check');
+
+        $.ajax({
+            type: 'POST',
+            data: userDetails,
+            url: '/register',
+            dataType: 'JSON'
+        }).done();
+    }
+    else {
+        alert('Please fill in all fields');
+        return false;
+    }
+};

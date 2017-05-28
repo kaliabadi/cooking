@@ -1,3 +1,11 @@
+function getCookie(name, next) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) {
+        next(parts.pop().split(";").shift());
+    }
+}
+
 function addRecipe(event) {
     event.preventDefault();
 
@@ -8,16 +16,23 @@ function addRecipe(event) {
 
     if(errorCount === 0) {
 
-        var newUser = {
+        var userID = "";
+
+        getCookie('cookinguser', function(cookieId) {
+            userID = decodeURIComponent(cookieId);
+        });
+
+        var newRecipe = {
             'recipeName': $('#inputRecipeName').val(),
             'cookingTime': $('#inputCookingTime').val(),
             'ingredients': $('#inputIngredients').val(),
             'method': $('#inputMethod').val(),
-        }
+            'userID': userID.valueOf()
+        };
 
         $.ajax({
             type: 'POST',
-            data: newUser,
+            data: newRecipe,
             url: '/documents/adddocument',
             dataType: 'JSON'
         }).done(function( response ) {

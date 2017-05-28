@@ -32,14 +32,12 @@ mixin nav_header
   li.dropdown-header
     block
 
-//- End navbar mixins
-
-
 +nav(title, "dropdown_menu")
   +nav_item( "/" ) Search
   +nav_item( "/recipeStore" ) Recipe Store
   +nav_item( "/contact" ) Contact
-    //- +nav_divider
-    //- +nav_header Nav header
-    //- +nav_item( "#" ) Separated link
-    //- +nav_item( "#" ) One more separated link
+  if (loggedIn==false)
+    +nav_item( "/login") Login
+    +nav_item( "/register") Register
+  else
+    +nav_item( '/account/' + userId) My Account: #{username}
