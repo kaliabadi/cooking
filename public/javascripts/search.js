@@ -1,9 +1,9 @@
-function search(event) {
+function search() {
     var query = $('#inputSearchQuery').val();
 
     populateSearchResults('/documents/documentlist/' + query);
     populateSearchResults('/documents/recipesearch/' + query);
-};
+}
 
 function populateSearchResults (query) {
     var tableContent;
@@ -23,9 +23,9 @@ function populateSearchResults (query) {
             tableContent += '</tr>';
         });
     
-    $('.searchList table tbody').append(tableContent); 
+        $('.searchList table tbody').append(tableContent);
     });
-};
+}
 
 function formatCheck (data) {
     if (data.parsed) {
@@ -33,8 +33,8 @@ function formatCheck (data) {
     } else {
         return data;
     }
-};
+}
 
 function addShownClass () {
     $('.searchList').addClass('shown');
-};
+}
