@@ -1,5 +1,3 @@
-'use strict';
-
 var apiActions = require('../../lib/api-actions');
 var config = require('../../config.json');
 var db = require('monk')('localhost:27017/test');
@@ -23,8 +21,22 @@ describe('api actions', function() {
     });
 
     describe('add a document', function() {
-        it('documents added to the recipe collection should be retrievable', function() {
-            
+        it('documents added to the recipe collection should be retrievable', function(done) {
+            var testDocument = {
+                'title': 'test title'
+            };
+
+            apiActions.addDocument(recipeCollection, testDocument);
+
+            recipeCollection.find({}, {}, function(e, docs) {
+                try {
+                    assert.equal(docs.length, 1);
+                    assert.equal(docs[0].title, testDocument.title);
+                    done();
+                } catch (e) {
+                    done(e);
+                }
+            })
         })
         
     })
