@@ -148,6 +148,19 @@ describe('api actions tests', function() {
                 }
             });
         });
+        
+        it('return no documents for invalid query', function(done) {
+            apiActions.addDocument(recipeCollection, testRecipe);
+            
+            apiActions.getDocument(recipeCollection, 'test user id', 'fake query', function(docs) {
+                try {
+                    assert.equal(docs.length, 0);
+                    done();
+                } catch (e) {
+                    done(e);
+                }
+            })
+        })
     });
 
     describe('get document by title', function() {
@@ -182,6 +195,36 @@ describe('api actions tests', function() {
                     assert.equal(data.length, 1);
                     done()
                 } catch(e) {
+                    done(e);
+                }
+            })
+        });
+
+        it('return no documents for invalid title', function(done) {
+            apiActions.addDocument(recipeCollection, testRecipe);
+
+            apiActions.getDocumentByTitle(recipeCollection, 'test user id', 'fake query', function(docs) {
+                try {
+                    assert.equal(docs.length, 0);
+                    done();
+                } catch (e) {
+                    done(e);
+                }
+            })
+        })
+    });
+    
+    describe('get documents', function() {
+        it('return correct number of documents for a user', function(){
+            apiActions.addDocument(recipeCollection, testRecipe);
+            apiActions.addDocument(recipeCollection, testRecipe);
+            
+            apiActions.getDocuments(recipeCollection, 'test user id', function(documents, done) {
+                try{
+                    assert.equal(documents.length, 2);
+                    assert.equal(documents[0].method, 'test method');
+                    done();
+                } catch (e) {
                     done(e);
                 }
             })
