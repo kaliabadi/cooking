@@ -147,10 +147,7 @@ describe('api actions', function() {
                         done(e);
                     }
                 })
-                
             })
-
-            
         })
     })
 });
