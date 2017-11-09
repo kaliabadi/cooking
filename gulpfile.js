@@ -29,6 +29,22 @@ gulp.task('e2e', ['server'], function() {
   });
 });
 
-gulp.task('test', ['e2e'], () => {
+gulp.task('endserver', ['e2e'], () => {
+  exec('killall node', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+});
+
+gulp.task('endmongo', ['endserver'], () => {
+  exec('mongo admin --eval "db.shutdownServer()";', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+});
+
+gulp.task('test', ['endmongo'], () => {
 
 })
