@@ -20,7 +20,7 @@ Password: hungry
 
 **\*Given*** I am a hungry user
 
-**\*When*** I miss out details whilst trying to regiaster
+**\*When*** I miss out details whilst trying to register
 
 **\*Then*** I am shown an error message
 
@@ -40,7 +40,7 @@ Password: hungry
 
 **\*When*** I visit the login page and enter my username and password
 
-**\*Then*** I recieve a message confirming that I am logged in
+**\*Then*** I receive a message confirming that I am logged in
 
 ----------
 
@@ -48,7 +48,7 @@ Password: hungry
 
 **\*When*** I try to log in
 
-**\*Then*** I recieve an error message
+**\*Then*** I receive an error message
 
 ----------
 
@@ -56,7 +56,7 @@ Password: hungry
 
 **\*When*** I miss out a field on the log in page
 
-**\*Then*** I recieve an error message
+**\*Then*** I receive an error message
 
 
 
@@ -86,7 +86,7 @@ Ingredients: Chicken, pasta, seasoning
 
 Method: Cook pasta, cook chicken, mix together and add seasoning
 
-**\*Then*** I will see tbe Chicken Pasta recipe in my recipe list
+**\*Then*** I will see the Chicken Pasta recipe in my recipe list
 
 ----------
 
@@ -127,5 +127,3 @@ Method: Cook pasta, cook chicken, mix together and add seasoning
 **\*When*** I search using punctuation, including spaces
 
 **\*Then*** I am shown an error message
-
- 
