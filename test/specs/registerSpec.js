@@ -124,7 +124,12 @@ describe('Registration page', function() {
 
     });
 
+  });
 
+  it('does not show the password while the user is typing', function() {
+    browser.url('http://localhost:3000/register');
+    console.log(browser.getAttribute('#inputPassword', 'type'))
+    assert.equal(browser.getAttribute('#inputPassword', 'type'), 'password');
   });
 
 });
