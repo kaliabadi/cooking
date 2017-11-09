@@ -27,4 +27,104 @@ describe('Registration page', function() {
 
   });
 
+  describe('registration with invalid credentials', function() {
+
+    afterEach(() => {
+      if(browser.alertText()) {
+        browser.alertDismiss();
+      }
+    });
+
+    describe('without a username', function() {
+
+      it('shows alert message', function () {
+          browser.url('http://localhost:3000/register');
+          browser.setValue('#inputFirstname', 'Joe');
+          browser.setValue('#inputLastname', 'Bloggs');
+          browser.setValue('#inputPassword', 'hungry');
+          browser.click('#btnRegister');
+          assert.equal(browser.alertText(), 'Please fill in all fields');
+      });
+
+      it('does not redirect to homepage', function () {
+          browser.url('http://localhost:3000/register');
+          browser.setValue('#inputFirstname', 'Joe');
+          browser.setValue('#inputLastname', 'Bloggs');
+          browser.setValue('#inputPassword', 'hungry');
+          browser.click('#btnRegister');
+
+          assert.equal(browser.getUrl(), 'http://localhost:3000/register');
+      });
+
+    });
+
+    describe('without a firstname', function() {
+
+      it('shows alert message', function () {
+          browser.url('http://localhost:3000/register');
+          browser.setValue('#inputUsername', 'JBfood');
+          browser.setValue('#inputLastname', 'Bloggs');
+          browser.setValue('#inputPassword', 'hungry');
+          browser.click('#btnRegister');
+          assert.equal(browser.alertText(), 'Please fill in all fields');
+      });
+
+      it('does not redirect to homepage', function () {
+          browser.url('http://localhost:3000/register');
+          browser.setValue('#inputUsername', 'JBfood');
+          browser.setValue('#inputLastname', 'Bloggs');
+          browser.setValue('#inputPassword', 'hungry');
+          browser.click('#btnRegister');
+          assert.equal(browser.getUrl(), 'http://localhost:3000/register');
+      });
+
+    });
+
+    describe('without a lastname', function() {
+
+      it('shows alert message', function () {
+          browser.url('http://localhost:3000/register');
+          browser.setValue('#inputUsername', 'JBfood');
+          browser.setValue('#inputFirstname', 'Joe');
+          browser.setValue('#inputPassword', 'hungry');
+          browser.click('#btnRegister');
+          assert.equal(browser.alertText(), 'Please fill in all fields');
+      });
+
+      it('does not redirect to homepage', function () {
+          browser.url('http://localhost:3000/register');
+          browser.setValue('#inputUsername', 'JBfood');
+          browser.setValue('#inputFirstname', 'Joe');
+          browser.setValue('#inputPassword', 'hungry');
+          browser.click('#btnRegister');
+          assert.equal(browser.getUrl(), 'http://localhost:3000/register');
+      });
+
+    });
+
+    describe('without a password', function() {
+
+      it('shows alert message', function () {
+          browser.url('http://localhost:3000/register');
+          browser.setValue('#inputUsername', 'JBfood');
+          browser.setValue('#inputFirstname', 'Joe');
+          browser.setValue('#inputLastname', 'Bloggs');
+          browser.click('#btnRegister');
+          assert.equal(browser.alertText(), 'Please fill in all fields');
+      });
+
+      it('does not redirect to homepage', function () {
+          browser.url('http://localhost:3000/register');
+          browser.setValue('#inputUsername', 'JBfood');
+          browser.setValue('#inputFirstname', 'Joe');
+          browser.setValue('#inputLastname', 'Bloggs');
+          browser.click('#btnRegister');
+          assert.equal(browser.getUrl(), 'http://localhost:3000/register');
+      });
+
+    });
+
+
+  });
+
 });
