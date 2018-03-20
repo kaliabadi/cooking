@@ -1,12 +1,12 @@
-start mondo db with
+only external dependency other than the node modules is mongodb:
 
-mongod -dbpath then a /data root in your repo
+https://treehouse.github.io/installation-guides/mac/mongo-mac.html
 
-then in the location of mongo instilation, generally /usr/local/bin run 
-mongo
 
-then npm i
+once you have run mongodb in a /data directory you can run the application
 
-then npm start
+simple run
+
+` npm start `
 
 and go to localhost:3000
