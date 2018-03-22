@@ -19,7 +19,7 @@ exports.config = {
     coloredLogs: true,
     bail: 0,
     screenshotPath: './errorShots/',
-    baseUrl: 'http://localhost3000/',
+    baseUrl: 'http://localhost:3000/',
     waitforTimeout: 10000,
     //
     // Default timeout in milliseconds for request

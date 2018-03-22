@@ -2,7 +2,7 @@ import HomePage from '../page-objects/home.page';
 
 describe('Cooking homepage', () => {
 
-  before ('Navigate to homepage', () => {
+  before ('Navigate to Homepage', () => {
     browser.url('/');
     });
 
@@ -10,7 +10,7 @@ describe('Cooking homepage', () => {
     HomePage.contact.moveToObject();
     HomePage.contact.waitForVisible();
     HomePage.contact.click();
-    expect(browser.getUrl()).to.equal('http://localhost:3000/contact');
+    expect(browser.getUrl()).to.contain('/contact');
   });
 
 });
