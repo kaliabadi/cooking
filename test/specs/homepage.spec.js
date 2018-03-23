@@ -13,4 +13,10 @@ describe('Cooking homepage', () => {
     expect(browser.getUrl()).to.contain('/contact');
   });
 
+  it('should navigate to recipe store page', () => {
+    HomePage.recipeStore.moveToObject();
+    HomePage.recipeStore.waitForVisible();
+    HomePage.recipeStore.click();
+    expect(browser.getUrl()).to.contain('/recipeStore');
+  });
 });
