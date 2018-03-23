@@ -19,4 +19,11 @@ describe('Cooking homepage', () => {
     HomePage.recipeStore.click();
     expect(browser.getUrl()).to.contain('/recipeStore');
   });
+
+  it ('should navigate to login page', () => {
+    HomePage.login.moveToObject();
+    HomePage.login.waitForVisible();
+    HomePage.login.click();
+    expect(browser.getUrl()).to.contain('/login');
+  });
 });
