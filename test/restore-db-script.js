@@ -1,0 +1,2 @@
+use sg
+db.dropDatabase()
