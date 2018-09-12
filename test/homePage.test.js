@@ -15,7 +15,9 @@ describe('GET /', function() {
     it('respond with status code 200', function(done) {
       request(app)
         .get('/')
-        .expect(200, done);
+        .expect(200, {
+          title: 'Cookbook'
+        }, done);
     });
   });
 });     
