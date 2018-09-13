@@ -1,14 +1,19 @@
 const app = require('../app.js');
-const expect = require('chai').expect;
+const chai = require('chai');
+const expect = chai.expect;
+chai.use(require('chai-http'));
+chai.use(require('chai-expected-cookie'));
 const request = require('supertest');
+
 
 describe('GET /', function() {
     it('respond with status code 200', function(done) {
       request(app)
         .get('/')
-        .then(function(response){
-          expect(200, response.text).to.contain('Cookbook');
-        }, done());
+        .expect(function(res) {
+          expect(res.text).to.contain('Cookbook');
+        })
+        .expect(200, done);
     });
   }); 
 
@@ -16,15 +21,16 @@ describe('GET /', function() {
     it('returns user ID', function(done) {
       request(app)
         .post('/register')
-        .send('username=alice')
+        .send('username=alice1')
+        .send('password=passw')
+        .send('firstname=Alice')
+        .send('lastname=Briggs')
         .set('Accept', 'application/json')
         .expect(function(res) {
-          res.body.id = 'id1';
-          res.body.username = 'alice';
+          expect(res).to.containCookie({
+            name: 'cookinguser'
+          })
         })
-        .expect(200, {
-          id: 'id1',
-          username: 'alice'
-        }, done);
+        .expect(200, done);
     });
   });
