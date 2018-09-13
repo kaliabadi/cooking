@@ -40,17 +40,3 @@ describe('GET /', function() {
         }, done);
     });
   });
-
-// describe('POST /register', function(){
-//   it('returns userId', function(){
-//     // submit user details through a form
-//     // Send user detail in request to database
-//     // how do we connect to the DB?
-//     // how to we return data from MongoDB? What datatype?
-
-//     var collection = req.db.get(config.dataBase);
-//     user;
-//     expect(collection).to.contain('id1')
-
-//   })
-// });
