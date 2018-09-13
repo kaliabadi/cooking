@@ -1,18 +1,6 @@
 const app = require('../app.js');
 const expect = require('chai').expect;
 const request = require('supertest');
-const nock = require('nock');
-
-var user = nock('http://localhost:3000')
-.get('/register')
-.query({
-    username: ['alice'],
-    password: ['fantasticPssword'],
-    firstname: ['Alice'],
-    lastname: ['InWonderland']
-    })
-.reply(200, {results: [{id: 'id1'}]});
-
 
 describe('GET /', function() {
     it('respond with status code 200', function(done) {
