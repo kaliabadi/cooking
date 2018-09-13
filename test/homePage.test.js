@@ -22,7 +22,7 @@ describe('GET /', function() {
           res.body.id = 'id1';
           res.body.username = 'alice';
         })
-        .expect({
+        .expect(200, {
           id: 'id1',
           username: 'alice'
         }, done);
