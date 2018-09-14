@@ -22,7 +22,7 @@ function addRecipe(event) {
             userID = decodeURIComponent(cookieId);
         });
 
-        var newRecipe = {
+        var newUser = {
             'recipeName': $('#inputRecipeName').val(),
             'cookingTime': $('#inputCookingTime').val(),
             'ingredients': $('#inputIngredients').val(),
@@ -32,7 +32,7 @@ function addRecipe(event) {
 
         $.ajax({
             type: 'POST',
-            data: newRecipe,
+            data: newUser,
             url: '/documents/adddocument',
             dataType: 'JSON'
         }).done(function( response ) {
