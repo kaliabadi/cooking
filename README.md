@@ -1,3 +1,9 @@
+# Cooking
+
+This repository contains everything required to run, build and test the cooking web application
+
+
+
 only external dependency other than the node modules is mongodb:
 
 https://treehouse.github.io/installation-guides/mac/mongo-mac.html
