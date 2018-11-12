@@ -8,7 +8,7 @@ pipeline {
             steps {
                 git "https://github.com/pliantmeerkat/cooking.git"
                 sh "npm install"
-                sh "npm install -g eslint"
+                // sh "npm install -g eslint"
             }
         }
         stage("Testing") {
