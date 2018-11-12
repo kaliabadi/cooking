@@ -13,6 +13,7 @@ pipeline {
         }
         stage("Testing") {
             steps {
+                sh "ls"
                 sh "npm test"
             }
         }
