@@ -1,8 +1,8 @@
 function getCookie(name, next) {
-	var value = "; " + document.cookie;
-	var parts = value.split("; " + name + "=");
+	var value = '; ' + document.cookie;
+	var parts = value.split('; ' + name + '=');
 	if (parts.length == 2) {
-			next(parts.pop().split(";").shift());
+		next(parts.pop().split(';').shift());
 	}
 }
 
@@ -11,46 +11,46 @@ function addRecipe(event) {
 
 	var errorCount = 0;
 	$('#addRecipe input').each(function(index, val) {
-			if($(this).val() === '') { errorCount++; }
+		if($(this).val() === '') { errorCount++; }
 	});
 
 	if(errorCount === 0) {
 
-			var userID = "";
+		var userID = '';
 
-			getCookie('cookinguser', function(cookieId) {
-					userID = decodeURIComponent(cookieId);
-			});
+		getCookie('cookinguser', function(cookieId) {
+			userID = decodeURIComponent(cookieId);
+		});
 
-			var newRecipe = {
-					'recipeName': $('#inputRecipeName').val(),
-					'cookingTime': $('#inputCookingTime').val(),
-					'ingredients': $('#inputIngredients').val(),
-					'method': $('#inputMethod').val(),
-					'userID': userID.valueOf()
-			};
+		var newRecipe = {
+			'recipeName': $('#inputRecipeName').val(),
+			'cookingTime': $('#inputCookingTime').val(),
+			'ingredients': $('#inputIngredients').val(),
+			'method': $('#inputMethod').val(),
+			'userID': userID.valueOf()
+		};
 
-			$.ajax({
-					type: 'POST',
-					data: newRecipe,
-					url: '/documents/adddocument',
-					dataType: 'JSON'
-			}).done(function( response ) {
+		$.ajax({
+			type: 'POST',
+			data: newRecipe,
+			url: '/documents/adddocument',
+			dataType: 'JSON'
+		}).done(function( response ) {
 
-					if (response.msg === '') {
-							$('#addRecipe fieldset input').val('');
-							populateTable();
-					}
-					else {
-							alert('Error: ' + response.msg);
-					}
-			});
+			if (response.msg === '') {
+				$('#addRecipe fieldset input').val('');
+				populateTable();
+			}
+			else {
+				alert('Error: ' + response.msg);
+			}
+		});
 	}
 	else {
-			alert('Please fill in all fields');
-			return false;
+		alert('Please fill in all fields');
+		return false;
 	}
-};
+}
 
 function deleteRecipe(event) {
 	event.preventDefault();
@@ -59,17 +59,17 @@ function deleteRecipe(event) {
 
 	if (confirmation === true) {
 		$.ajax({
-				type: 'DELETE',
-				url: '/documents/deletedocument/' + $(this).attr('rel')
+			type: 'DELETE',
+			url: '/documents/deletedocument/' + $(this).attr('rel')
 		}).done(function( response ) {
 
-				if (response.msg === '') {
-				}
-				else {
-						alert('Error: ' + response.msg);
-				}
+			if (response.msg === '') {
+			}
+			else {
+				alert('Error: ' + response.msg);
+			}
 
-				populateTable();
+			populateTable();
 		});
 	} else {
 		return false;
