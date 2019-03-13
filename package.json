@@ -10,6 +10,8 @@
     "bluebird": "^3.4.6",
     "body-parser": "^1.18.3",
     "browserify": "^13.1.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
     "cookie-parser": "~1.3.5",
     "debug": "^4.1.1",
     "express": "^4.16.4",
@@ -23,7 +25,8 @@
     "monk": "^3.1.2",
     "morgan": "^1.9.1",
     "request": "^2.79.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "sinon": "^7.2.7"
   },
   "devDependencies": {
     "@wdio/cli": "^5.7.1",
@@ -32,6 +35,8 @@
     "@wdio/mocha-framework": "^5.7.0",
     "@wdio/spec-reporter": "^5.7.0",
     "@wdio/sync": "^5.7.1",
+    "chai": "*",
+    "supertest": "^4.0.0",
     "webdriverio": "^5.7.1"
   },
   "description": "only external dependency other than the node modules is mongodb:",

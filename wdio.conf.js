@@ -20,6 +20,7 @@ exports.config = {
     //
     specs: [
         './test/routes/**/*.js'
+        // './test/routes/api-actions-test.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -123,14 +124,14 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec'],
+    reporters: ['dot', 'spec'],
 
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-        ui: 'bdd'
-        // timeout: 99999999
+        ui: 'bdd',
+        timeout: 99999999
     },
     //
     // =====
